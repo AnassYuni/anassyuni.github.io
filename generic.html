@@ -7,6 +7,16 @@
   <link rel="stylesheet" href="templatemo-3d-coverflow.css">
 
   <style>
+    /* Background video */
+    .video-background {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      filter: brightness(0.4) blur(2px);
+    }
+
     /* Popup overlay */
     .video-popup {
       display: none;
@@ -33,9 +43,23 @@
       cursor: pointer;
       font-weight: bold;
     }
+
+    /* Ensure coverflow content is above bg */
+    .coverflow-wrapper {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: #fff;
+    }
   </style>
 </head>
 <body>
+  <!-- 🎥 Background video -->
+  <video class="video-background" autoplay muted loop>
+    <source src="videos/production-bg.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
   <!-- Coverflow Section -->
   <section id="home" class="section">
     <div class="coverflow-wrapper">
