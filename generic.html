@@ -1,123 +1,82 @@
-<!DOCTYPE HTML>
-<!--
-	Anass Yuni Portfolio
-	Adapted from HTML5 UP
--->
-<html>
-	<head>
-		<title>About Me - Anass Yuni</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Coverflow Section</title>
+  <link rel="stylesheet" href="templatemo-3d-coverflow.css">
+</head>
+<body>
+  <!-- Coverflow Section -->
+  <section id="home" class="section">
+    <div class="coverflow-wrapper">
+      <div class="info">
+        <h2 id="current-title">Ocean Sunset</h2>
+        <p id="current-description">Golden hour over endless ocean waves</p>
+      </div>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+      <div class="coverflow-container" tabindex="0">
+        <div class="coverflow" id="coverflow">
+          <div class="coverflow-item" data-index="0">
+            <div class="cover image-loading">
+              <img src="images/mountain-landscape.jpg" alt="Mountain Landscape" loading="lazy">
+            </div>
+            <div class="reflection"></div>
+          </div>
+          <div class="coverflow-item" data-index="1">
+            <div class="cover image-loading">
+              <img src="images/forest-path.jpg" alt="Forest Path" loading="lazy">
+            </div>
+            <div class="reflection"></div>
+          </div>
+          <div class="coverflow-item" data-index="2">
+            <div class="cover image-loading">
+              <img src="images/serene-water-mirroring.jpg" alt="Lake Reflection" loading="lazy">
+            </div>
+            <div class="reflection"></div>
+          </div>
+          <div class="coverflow-item" data-index="3">
+            <div class="cover image-loading">
+              <img src="images/ocean-sunset-golden-hour.jpg" alt="Ocean Sunset" loading="lazy">
+            </div>
+            <div class="reflection"></div>
+          </div>
+          <div class="coverflow-item" data-index="4">
+            <div class="cover image-loading">
+              <img src="images/rolling-sand-dunes.jpg" alt="Desert Dunes" loading="lazy">
+            </div>
+            <div class="reflection"></div>
+          </div>
+          <div class="coverflow-item" data-index="5">
+            <div class="cover image-loading">
+              <img src="images/starry-night.jpg" alt="Starry Night" loading="lazy">
+            </div>
+            <div class="reflection"></div>
+          </div>
+          <div class="coverflow-item" data-index="6">
+            <div class="cover image-loading">
+              <img src="images/cascading-waterfall.jpg" alt="Waterfall" loading="lazy">
+            </div>
+            <div class="reflection"></div>
+          </div>
+        </div>
 
-				<!-- Header -->
-					<header id="header">
-						<a href="index.html" class="logo">Anass Yuni</a>
-					</header>
+        <!-- Navigation buttons -->
+        <button class="nav-button prev" onclick="navigate(-1)">‹</button>
+        <button class="nav-button next" onclick="navigate(1)">›</button>
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							<li><a href="index.html">This is Anass Yuni</a></li>
-							<li class="active"><a href="generic.html">About Me</a></li>
-							<li><a href="elements.html">Services</a></li>
-						</ul>
-						<ul class="icons">
-							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-						</ul>
-					</nav>
+        <!-- Dots -->
+        <div class="dots-container" id="dots"></div>
+        
+        <!-- Play/Pause -->
+        <button class="play-pause-button" id="playPauseBtn" onclick="toggleAutoplay()">
+          <span class="play-icon">▶</span>
+          <span class="pause-icon" style="display: none;">❚❚</span>
+        </button>
+      </div>
+    </div>
+  </section>
 
-				<!-- Main -->
-					<div id="main">
-
-						<!-- Post -->
-							<section class="post">
-								<header class="major">
-									<span class="date">2025</span>
-									<h1>About<br />
-									Anass Yuni</h1>
-									<p>I am <strong>Anass HAYONI</strong>, a Moroccan video producer passionate about telling stories through visuals.  
-									With expertise in commercials, corporate films, and creative video content, I help brands and individuals bring their ideas to life with cinematic precision and emotional impact.</p>
-								</header>
-								<div class="image main"><img src="images/pic01.jpg" alt="About Anass Yuni" /></div>
-								<p>My journey in video production is driven by creativity and dedication. I believe every frame has the power to inspire, connect, and move people. Over the years, I’ve worked on diverse projects — from advertisements and documentaries to social media content and event coverage. Each project is an opportunity to translate visions into reality.</p>
-								<p>From pre-production planning, scriptwriting, and directing to editing and post-production, I handle every step with professionalism and creativity. My goal is to create impactful visuals that not only look great but also resonate deeply with the audience.</p>
-							</section>
-
-					</div>
-
-				<!-- Footer -->
-					<footer id="footer">
-						<section>
-							<form method="post" action="#">
-								<div class="fields">
-									<div class="field">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field">
-										<label for="email">Email</label>
-										<input type="text" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="3"></textarea>
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form>
-						</section>
-						<section class="split contact">
-							<section class="alt">
-								<h3>Address</h3>
-								<p>Morocco</p>
-							</section>
-							<section>
-								<h3>Phone</h3>
-								<p><a href="#">(Add your phone number)</a></p>
-							</section>
-							<section>
-								<h3>Email</h3>
-								<p><a href="mailto:anass.hayoni@gmail.com">anass.hayoni@gmail.com</a></p>
-							</section>
-							<section>
-								<h3>Social</h3>
-								<ul class="icons alt">
-									<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-							</section>
-						</section>
-					</footer>
-
-				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>&copy; Anass Yuni</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
-					</div>
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+  <script src="templatemo-3d-coverflow-scripts.js"></script>
+</body>
 </html>
