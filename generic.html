@@ -3,11 +3,100 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>3D Coverflow Section</title>
-  <link rel="stylesheet" href="templatemo-3d-coverflow.css">
+  <title>3D Coverflow Standalone</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .coverflow-wrapper {
+      text-align: center;
+      max-width: 100%;
+    }
+    .info {
+      margin-bottom: 20px;
+    }
+    .coverflow-container {
+      position: relative;
+      perspective: 1200px;
+      height: 400px;
+      width: 90vw;
+      max-width: 1000px;
+      margin: auto;
+      overflow: visible;
+    }
+    .coverflow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform-style: preserve-3d;
+      transition: transform 0.6s ease;
+    }
+    .coverflow-item {
+      flex: 0 0 auto;
+      width: 250px;
+      height: 350px;
+      margin: 0 -60px;
+      transition: transform 0.6s ease, opacity 0.6s ease;
+      position: relative;
+    }
+    .coverflow-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+    }
+    .nav-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      color: #fff;
+      border: none;
+      font-size: 2rem;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 50%;
+      z-index: 2;
+    }
+    .nav-button.prev { left: -50px; }
+    .nav-button.next { right: -50px; }
+    .dots-container {
+      margin-top: 15px;
+    }
+    .dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin: 0 4px;
+      background: #777;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .dot.active {
+      background: #fff;
+    }
+    .play-pause-button {
+      margin-top: 15px;
+      background: #222;
+      border: none;
+      color: #fff;
+      font-size: 1rem;
+      padding: 8px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-  <!-- Coverflow Section -->
   <section id="home" class="section">
     <div class="coverflow-wrapper">
       <div class="info">
@@ -17,47 +106,26 @@
 
       <div class="coverflow-container" tabindex="0">
         <div class="coverflow" id="coverflow">
-          <div class="coverflow-item" data-index="0">
-            <div class="cover image-loading">
-              <img src="images/mountain-landscape.jpg" alt="Mountain Landscape" loading="lazy">
-            </div>
-            <div class="reflection"></div>
+          <div class="coverflow-item" data-title="Mountain Landscape" data-description="Peaceful mountains at sunrise">
+            <img src="https://picsum.photos/id/1018/600/800" alt="Mountain Landscape">
           </div>
-          <div class="coverflow-item" data-index="1">
-            <div class="cover image-loading">
-              <img src="images/forest-path.jpg" alt="Forest Path" loading="lazy">
-            </div>
-            <div class="reflection"></div>
+          <div class="coverflow-item" data-title="Forest Path" data-description="A walk through quiet woods">
+            <img src="https://picsum.photos/id/1015/600/800" alt="Forest Path">
           </div>
-          <div class="coverflow-item" data-index="2">
-            <div class="cover image-loading">
-              <img src="images/serene-water-mirroring.jpg" alt="Lake Reflection" loading="lazy">
-            </div>
-            <div class="reflection"></div>
+          <div class="coverflow-item" data-title="Lake Reflection" data-description="Mirror-like still waters">
+            <img src="https://picsum.photos/id/1011/600/800" alt="Lake Reflection">
           </div>
-          <div class="coverflow-item" data-index="3">
-            <div class="cover image-loading">
-              <img src="images/ocean-sunset-golden-hour.jpg" alt="Ocean Sunset" loading="lazy">
-            </div>
-            <div class="reflection"></div>
+          <div class="coverflow-item" data-title="Ocean Sunset" data-description="Golden hour over endless ocean waves">
+            <img src="https://picsum.photos/id/1016/600/800" alt="Ocean Sunset">
           </div>
-          <div class="coverflow-item" data-index="4">
-            <div class="cover image-loading">
-              <img src="images/rolling-sand-dunes.jpg" alt="Desert Dunes" loading="lazy">
-            </div>
-            <div class="reflection"></div>
+          <div class="coverflow-item" data-title="Desert Dunes" data-description="Rolling golden sand dunes">
+            <img src="https://picsum.photos/id/1002/600/800" alt="Desert Dunes">
           </div>
-          <div class="coverflow-item" data-index="5">
-            <div class="cover image-loading">
-              <img src="images/starry-night.jpg" alt="Starry Night" loading="lazy">
-            </div>
-            <div class="reflection"></div>
+          <div class="coverflow-item" data-title="Starry Night" data-description="A clear night sky full of stars">
+            <img src="https://picsum.photos/id/1022/600/800" alt="Starry Night">
           </div>
-          <div class="coverflow-item" data-index="6">
-            <div class="cover image-loading">
-              <img src="images/cascading-waterfall.jpg" alt="Waterfall" loading="lazy">
-            </div>
-            <div class="reflection"></div>
+          <div class="coverflow-item" data-title="Waterfall" data-description="Cascading fresh mountain waterfall">
+            <img src="https://picsum.photos/id/1019/600/800" alt="Waterfall">
           </div>
         </div>
 
@@ -67,16 +135,66 @@
 
         <!-- Dots -->
         <div class="dots-container" id="dots"></div>
-        
+
         <!-- Play/Pause -->
         <button class="play-pause-button" id="playPauseBtn" onclick="toggleAutoplay()">
-          <span class="play-icon">▶</span>
-          <span class="pause-icon" style="display: none;">❚❚</span>
+          ▶ Play / ❚❚ Pause
         </button>
       </div>
     </div>
   </section>
 
-  <script src="templatemo-3d-coverflow-scripts.js"></script>
+  <script>
+    const coverflow = document.getElementById('coverflow');
+    const items = document.querySelectorAll('.coverflow-item');
+    const titleEl = document.getElementById('current-title');
+    const descEl = document.getElementById('current-description');
+    const dotsContainer = document.getElementById('dots');
+    let currentIndex = 3; // Start at "Ocean Sunset"
+    let autoplay = null;
+
+    function render() {
+      items.forEach((item, i) => {
+        const offset = i - currentIndex;
+        const abs = Math.abs(offset);
+        const scale = Math.max(0.7, 1 - abs * 0.15);
+        item.style.transform = `translateX(${offset * 220}px) scale(${scale}) rotateY(${offset * -30}deg)`;
+        item.style.zIndex = -abs;
+        item.style.opacity = abs > 3 ? 0 : 1;
+      });
+      const active = items[currentIndex];
+      titleEl.textContent = active.dataset.title;
+      descEl.textContent = active.dataset.description;
+      renderDots();
+    }
+
+    function renderDots() {
+      dotsContainer.innerHTML = '';
+      items.forEach((_, i) => {
+        const dot = document.createElement('span');
+        dot.className = 'dot' + (i === currentIndex ? ' active' : '');
+        dot.onclick = () => { currentIndex = i; render(); };
+        dotsContainer.appendChild(dot);
+      });
+    }
+
+    function navigate(dir) {
+      currentIndex = (currentIndex + dir + items.length) % items.length;
+      render();
+    }
+
+    function toggleAutoplay() {
+      if (autoplay) {
+        clearInterval(autoplay);
+        autoplay = null;
+        document.getElementById('playPauseBtn').textContent = '▶ Play';
+      } else {
+        autoplay = setInterval(() => navigate(1), 3000);
+        document.getElementById('playPauseBtn').textContent = '❚❚ Pause';
+      }
+    }
+
+    render();
+  </script>
 </body>
 </html>
