@@ -80,25 +80,25 @@
 									</ul>
 								</article>
 								<article>
-    <header>
-        <span class="date">2025</span>
-        <h2><a href="#">AJYAD<br />
-		Oud Arabi Perfume</a></h2>
-    </header>
+<header>
+    <span class="date">2025</span>
+    <h2><a href="#">AJYAD<br />
+    Oud Arabi Perfume</a></h2>
+</header>
 
-    <!-- Video replaces the image -->
-    <video class="image fit" controls>
-        <source src="videos/OUD TURABI.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+<!-- Video without controls -->
+<video id="oudVideo" class="image fit" style="cursor: pointer;">
+    <source src="videos/OUD TURABI.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
 
-    <p>I produced an advertising video for AJYAD’s fragrance Oud Arabi in my studio. The project was a truly enjoyable experience, blending creativity with elegance to reflect the perfume’s luxurious spirit. Collaboration with AJYAD was smooth and rewarding, and the client was delighted with the final result.</p>
-    <ul class="actions special">
-        <li><a href="#" class="button">Full Story</a></li>
-    </ul>
-</article>
+<p>I produced an advertising video for AJYAD’s fragrance Oud Arabi in my studio. The project was a truly enjoyable experience, blending creativity with elegance to reflect the perfume’s luxurious spirit. Collaboration with AJYAD was smooth and rewarding, and the client was delighted with the final result.</p>
+<ul class="actions special">
+    <li><a href="#" class="button">Full Story</a></li>
+</ul>
+
 <script>
-    const video = document.getElementById('myVideo');
+    const video = document.getElementById('oudVideo');
     video.addEventListener('click', () => {
         if (video.paused) {
             video.play();
