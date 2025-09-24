@@ -89,58 +89,103 @@
 						<h2><a href="#">A Passion for<br />
 						Visual Storytelling</a></h2>
 						<p>As a dedicated video producer, I specialize in bringing stories to life. Whether it's through commercials, corporate videos, or artistic projects, I am committed to delivering high-quality, visually compelling work that resonates with audiences.</p>
-					</header>
-					<a href="#" class="image main"><img src="images/pic01.jpg" alt="" /></a>
-				</article>
+<!-- Video Section -->
+<a href="#" class="image main" style="position: relative; display: block;">
+    <!-- Background video -->
+    <video 
+        id="bgVideo"
+        autoplay
+        loop
+        playsinline
+        style="
+            display: block; 
+            width: 100%; 
+            height: auto; 
+            opacity: 0; 
+            transition: opacity 1s ease-in-out;
+        "
+    >
+        <source src="videos/your-video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</a>
+
+<script>
+    const video = document.getElementById("bgVideo");
+
+    // Scroll-based play/pause with fade effect
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) {
+                video.style.opacity = 0;
+                setTimeout(() => {
+                    video.play().catch(()=>{}); // play with sound
+                    video.style.opacity = 1;
+                }, 100);
+            } else {
+                video.style.opacity = 0;
+                setTimeout(() => {
+                    video.pause();
+                }, 500);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    observer.observe(video);
+</script>
 
 				<!-- Posts -->
 				<section class="posts">
 					<article>
 						<header>
 							<span class="date">2025</span>
-							<h2><a href="#">versace<br />Red jeans Perfume</a></h2>
+							<h2><a href="#">versace<br />
+								Red jeans Perfume</a></h2>
 						</header>
 						<video class="image fit">
 							<source src="videos/VERSACE COMMERCIAL v3.mp4" type="video/mp4">
 							Your browser does not support the video tag.
 						</video>
-						<p>For this project, I crafted a creative proposal video inspired by the youthful energy of Red Jeans. It was a joy to explore a playful yet stylish direction in the studio. The highlight was receiving kind feedback from Versace on Instagram — a motivating moment that made the experience truly special.</p>
+						<p>We delivered a vibrant, stylish Red Jeans concept video, delighted with Versace’s supportive Instagram feedback.</p>
 					</article>
 
 					<article>
 						<header>
 							<span class="date">2025</span>
-							<h2><a href="#">AJYAD<br />Oud Arabi Perfume</a></h2>
+							<h2><a href="#">AJYAD<br />
+								Oud Arabi Perfume</a></h2>
 						</header>
 						<video class="image fit">
 							<source src="videos/OUD TURABI.mp4" type="video/mp4">
 							Your browser does not support the video tag.
 						</video>
-						<p>I produced an advertising video for AJYAD’s fragrance Oud Arabi in my studio. The project was a truly enjoyable experience, blending creativity with elegance to reflect the perfume’s luxurious spirit. Collaboration with AJYAD was smooth and rewarding, and the client was delighted with the final result.</p>
+						<p>We delivered a refined Oud Arabi fragrance video, merging artistry with elegance, exceeding AJYAD’s expectations.</p>
 					</article>
 
 					<article>
 						<header>
 							<span class="date">2025</span>
-							<h2><a href="#">yamna desgin<br />MAgistral bowl</a></h2>
+							<h2><a href="#">yamna desgin<br />
+								creatable</a></h2>
 						</header>
 						<video class="image fit">
 							<source src="videos/YAMNA_FILM 02_4K_1.mp4" type="video/mp4">
 							Your browser does not support the video tag.
 						</video>
-						<p>I produced an advertising video for this project in my studio. The project was a truly enjoyable experience, blending creativity with elegance. Collaboration with the client was smooth and rewarding.</p>
+						<p>We unveiled the soul of pure walnut wood, crafting a cinematic story of elegance, depth, and artistry.</p>
 					</article>
 
 					<article>
 						<header>
 							<span class="date">2025</span>
-							<h2><a href="#">yamna desgin<br />small bowls</a></h2>
+							<h2><a href="#">yamna desgin<br />
+								MAgistral bowl</a></h2>
 						</header>
 						<video class="image fit">
 							<source src="videos/YAMNA_FILM 01_4K_1.mp4" type="video/mp4">
 							Your browser does not support the video tag.
 						</video>
-						<p>I produced an advertising video for this project in my studio. The project was a truly enjoyable experience, blending creativity with elegance. Collaboration with the client was smooth and rewarding.</p>
+						<p>Our lens transformed a grand walnut creation into a timeless visual poem of strength and natural beauty.</p>
 					</article>
 				</section>
 
