@@ -94,9 +94,9 @@
     <!-- Background video -->
     <video 
         id="bgVideo"
-        autoplay
-        loop
+        muted
         playsinline
+        loop
         style="
             display: block; 
             width: 100%; 
@@ -108,10 +108,39 @@
         <source src="videos/HEAD SHOWREEL 3.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
+
+    <!-- Minimal mute/unmute icon -->
+    <div id="soundToggle" style="
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    ">
+        <!-- Muted icon initially -->
+        <svg id="soundIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white">
+            <path d="M16.5 12c0-1.77-.77-3.29-2-4.28v8.56c1.23-.99 2-2.51 2-4.28z"/>
+            <path d="M3 9v6h4l5 5V4L7 9H3z"/>
+        </svg>
+    </div>
 </a>
 
 <script>
     const video = document.getElementById("bgVideo");
+    const soundToggle = document.getElementById("soundToggle");
+    const soundIcon = document.getElementById("soundIcon");
+
+    // Toggle mute/unmute
+    soundToggle.addEventListener("click", () => {
+        video.muted = !video.muted;
+        soundIcon.innerHTML = video.muted
+            ? '<path d="M16.5 12c0-1.77-.77-3.29-2-4.28v8.56c1.23-.99 2-2.51 2-4.28z"/><path d="M3 9v6h4l5 5V4L7 9H3z"/>'
+            : '<path d="M16.5 12c0-1.77-.77-3.29-2-4.28v8.56c1.23-.99 2-2.51 2-4.28z"/><path d="M19 12c0 3.87-3.13 7-7 7v2c5.52 0 10-4.48 10-10h-2z"/><path d="M3 9v6h4l5 5V4L7 9H3z"/>';
+    });
 
     // Scroll-based play/pause with fade effect
     const observer = new IntersectionObserver(entries => {
@@ -119,7 +148,7 @@
             if(entry.isIntersecting) {
                 video.style.opacity = 0;
                 setTimeout(() => {
-                    video.play().catch(()=>{}); // play with sound
+                    video.play().catch(()=>{});
                     video.style.opacity = 1;
                 }, 100);
             } else {
@@ -133,7 +162,6 @@
 
     observer.observe(video);
 </script>
-
 				<!-- Posts -->
 				<section class="posts">
 					<article>
@@ -205,7 +233,7 @@
 						<header>
 							<span class="date">2025</span>
 							<h2><a href="#">Moroccan National Tourism Office<br />
-								visit morocco</a></h2>
+							</a></h2>
 						</header>
 						<video class="image fit">
 							<source src="videos/VISIT MOROCCO_2.mp4" type="video/mp4">
