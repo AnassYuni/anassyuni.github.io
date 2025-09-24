@@ -3,52 +3,93 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
+  <title>Clients & Experience</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: "Helvetica Neue", Arial, sans-serif;
       margin: 0;
       padding: 0;
       line-height: 1.6;
-      background-color: #f4f4f4;
+      background: #fafafa;
       color: #333;
     }
     header {
-      background: #222;
+      background: linear-gradient(135deg, #ff9900, #ff6600);
       color: #fff;
-      padding: 40px 20px;
+      padding: 60px 20px 40px;
       text-align: center;
+      position: relative;
+    }
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: #fff;
+      color: #ff6600;
+      padding: 10px 18px;
+      border-radius: 25px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.3s;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+    }
+    .back-btn:hover {
+      background: #333;
+      color: #fff;
     }
     header h1 {
       margin: 0;
-      font-size: 2.5em;
+      font-size: 2.8em;
     }
     header p {
       margin-top: 10px;
       font-size: 1.2em;
-      color: #ccc;
+      opacity: 0.9;
     }
     section {
-      padding: 40px 20px;
+      padding: 50px 20px;
       max-width: 900px;
       margin: auto;
+      text-align: center;
     }
-    h2, h3 {
+    section h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
       color: #222;
     }
-    .box {
-      background: #fff;
-      padding: 20px;
-      margin: 20px 0;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    section p {
+      font-size: 1.1em;
+      margin-bottom: 20px;
     }
-    blockquote {
-      background: #eee;
-      padding: 20px;
-      margin: 20px 0;
-      border-left: 5px solid #444;
-      font-style: italic;
+    .clients {
+      background: #fff;
+      border-radius: 12px;
+      padding: 50px 20px;
+      margin: 40px auto;
+      max-width: 1200px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .clients h2 {
+      margin-bottom: 30px;
+      color: #ff6600;
+    }
+    .logo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 25px;
+      justify-items: center;
+      align-items: center;
+    }
+    .logo-grid img {
+      max-width: 100px;
+      max-height: 60px;
+      object-fit: contain;
+      filter: grayscale(100%);
+      transition: 0.3s;
+    }
+    .logo-grid img:hover {
+      filter: grayscale(0%);
+      transform: scale(1.1);
     }
     footer {
       background: #222;
@@ -56,54 +97,70 @@
       text-align: center;
       padding: 20px;
       margin-top: 40px;
+      font-size: 0.9em;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Welcome to My Creative World</h1>
-    <p>Capturing stories, emotions, and moments that truly matter.</p>
+    <a href="index.html" class="back-btn">← Back to Home</a>
+    <h1>Clients & Experience</h1>
+    <p>Celebrating years of creative collaboration</p>
   </header>
 
   <section>
-    <h2>About Me</h2>
+    <h2>A Journey with Wonderful Clients</h2>
     <p>
-      Every great story begins with passion, creativity, and a vision to inspire. 
-      I believe in the power of visuals to connect people, spark emotions, and leave 
-      a mark that lasts beyond the moment. My work reflects dedication to detail, 
-      authenticity, and a desire to create something meaningful.
+      Over the years, I’ve had the joy of working with many amazing clients. 
+      Each project has been more than just work—it’s been about building trust, 
+      sharing ideas, and creating something meaningful together. 
+    </p>
+    <p>
+      What makes this journey special is the relationships we create along the way. 
+      My clients are not just partners; they become part of the story. 
+      Together, we laugh, brainstorm, and celebrate every success, big or small. 
+    </p>
+    <p>
+      I’m truly grateful for every smile, every feedback, and every handshake that 
+      turned into a long-lasting friendship. This is what keeps my passion alive 
+      and makes each new project exciting and full of hope.
     </p>
   </section>
 
-  <section>
-    <h3>My Work</h3>
-    <p>
-      Creativity is more than an act—it’s a way of seeing the world. 
-      Each project I take on is approached with care, ensuring that 
-      every frame, word, or design element feels purposeful. 
-      My mission is to transform ideas into experiences that speak to the heart.
-    </p>
-    <div class="box">
-      <p>
-        Behind every project is a story waiting to be told. I dedicate myself 
-        to turning concepts into impactful visuals that capture attention and 
-        leave a lasting impression. With a blend of artistry and precision, 
-        each piece of work becomes more than content—it becomes a connection.
-      </p>
+  <section class="clients">
+    <h2>Trusted by Amazing Brands</h2>
+    <div class="logo-grid">
+      <img src="logos/logo1.png" alt="Client 1">
+      <img src="logos/logo2.png" alt="Client 2">
+      <img src="logos/logo3.png" alt="Client 3">
+      <img src="logos/logo4.png" alt="Client 4">
+      <img src="logos/logo5.png" alt="Client 5">
+      <img src="logos/logo6.png" alt="Client 6">
+      <img src="logos/logo7.png" alt="Client 7">
+      <img src="logos/logo8.png" alt="Client 8">
+      <img src="logos/logo9.png" alt="Client 9">
+      <img src="logos/logo10.png" alt="Client 10">
+      <img src="logos/logo11.png" alt="Client 11">
+      <img src="logos/logo12.png" alt="Client 12">
+      <img src="logos/logo13.png" alt="Client 13">
+      <img src="logos/logo14.png" alt="Client 14">
+      <img src="logos/logo15.png" alt="Client 15">
+      <img src="logos/logo16.png" alt="Client 16">
+      <img src="logos/logo17.png" alt="Client 17">
+      <img src="logos/logo18.png" alt="Client 18">
+      <img src="logos/logo19.png" alt="Client 19">
+      <img src="logos/logo20.png" alt="Client 20">
+      <img src="logos/logo21.png" alt="Client 21">
+      <img src="logos/logo22.png" alt="Client 22">
+      <img src="logos/logo23.png" alt="Client 23">
+      <img src="logos/logo24.png" alt="Client 24">
+      <img src="logos/logo25.png" alt="Client 25">
     </div>
   </section>
 
-  <section>
-    <h3>Philosophy</h3>
-    <blockquote>
-      “Creativity is intelligence having fun. Each idea is a seed—when nurtured with passion, 
-      it grows into something extraordinary.”
-    </blockquote>
-  </section>
-
   <footer>
-    <p>&copy; 2025 My Portfolio | Designed with passion</p>
+    <p>&copy; 2025 My Portfolio | With gratitude to all my clients</p>
   </footer>
 
 </body>
