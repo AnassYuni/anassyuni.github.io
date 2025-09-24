@@ -37,6 +37,23 @@
       background: #333;
       color: #fff;
     }
+    .lang-switch {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+    }
+    .lang-switch a img {
+      width: 30px;
+      height: 20px;
+      border-radius: 4px;
+      transition: 0.3s;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+    .lang-switch a img:hover {
+      transform: scale(1.1);
+    }
     header h1 {
       margin: 0;
       font-size: 2.8em;
@@ -105,6 +122,13 @@
 
   <header>
     <a href="index.html" class="back-btn">← Back to Home</a>
+
+    <!-- Language Switch -->
+    <div class="lang-switch">
+      <a href="clients_en.html"><img src="icons/uk.png" alt="English"></a>
+      <a href="clients_fr.html"><img src="icons/fr.png" alt="Français"></a>
+    </div>
+
     <h1>Clients & Experience</h1>
     <p>Celebrating years of creative collaboration</p>
   </header>
