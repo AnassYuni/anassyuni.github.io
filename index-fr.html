@@ -89,25 +89,30 @@
 						<h2><a href="#">Une Passion pour<br />
 						la Narration Visuelle</a></h2>
 						<p>En tant que producteur vidéo dédié, je me spécialise dans la mise en vie des histoires. Que ce soit à travers des publicités, des vidéos d'entreprise ou des projets artistiques, je m'engage à fournir un travail de haute qualité, visuellement captivant et qui résonne auprès du public.</p>
-					</header>
+</header>
 <a href="#" class="image main" style="position: relative; display: block;">
     <!-- Background video -->
     <video 
         id="bgVideo"
-        class="image fit" 
-        autoplay 
-        loop 
-        muted 
+        class="image fit"
+        muted
         playsinline
-        width="1080" 
+        width="1080"
         height="720"
-        style="display: block; width: 100%; height: auto;"
+        loop
+        style="
+            display: block; 
+            width: 100%; 
+            height: auto; 
+            opacity: 0; 
+            transition: opacity 1s ease-in-out;
+        "
     >
-        <source src="videos/HEAD SHOWREEL 1.mp4" type="video/mp4">
+        <source src="videos/HEAD SHOWREEL 3.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
-    <!-- Minimal mute/unmute button -->
+    <!-- Minimal mute/unmute button with SVG -->
     <button id="soundToggle" 
         aria-label="Toggle sound"
         style="
@@ -123,19 +128,56 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 20px;
             transition: background 0.3s;
         "
         onmouseover="this.style.background='rgba(0,0,0,0.8)'" 
         onmouseout="this.style.background='rgba(0,0,0,0.5)'"
     >
-        🔇
+        <svg id="soundIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white">
+            <path d="M16.5 12c0-1.77-.77-3.29-2-4.28v8.56c1.23-.99 2-2.51 2-4.28z"/>
+            <path d="M3 9v6h4l5 5V4L7 9H3z"/>
+        </svg>
     </button>
 </a>
 </article>
 
 <script>
+const video = document.getElementById("bgVideo");
+const soundBtn = document.getElementById("soundToggle");
+const soundIcon = document.getElementById("soundIcon");
+
+// Mute/unmute button
+soundBtn.addEventListener("click", () => {
+    video.muted = !video.muted;
+
+    if(video.muted) {
+        soundIcon.innerHTML = '<path d="M16.5 12c0-1.77-.77-3.29-2-4.28v8.56c1.23-.99 2-2.51 2-4.28z"/><path d="M3 9v6h4l5 5V4L7 9H3z"/>'; // muted
+    } else {
+        soundIcon.innerHTML = '<path d="M16.5 12c0-1.77-.77-3.29-2-4.28v8.56c1.23-.99 2-2.51 2-4.28z"/><path d="M19 12c0 3.87-3.13 7-7 7v2c5.52 0 10-4.48 10-10h-2z"/><path d="M3 9v6h4l5 5V4L7 9H3z"/>'; // unmuted
+    }
+});
+
+// Intersection Observer for scroll-based play/pause with fade effect
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting) {
+            video.style.opacity = 0; // start transparent
+            setTimeout(() => {
+                video.play().catch(()=>{});
+                video.style.opacity = 1; // fade in
+            }, 100); // slight delay for mobile autoplay
+        } else {
+            video.style.opacity = 0; // fade out
+            setTimeout(() => {
+                video.pause();
+            }, 500); // pause after fade out
+        }
+    });
+}, { threshold: 0.5 });
+
+observer.observe(video);
+</script>
+
     const video = document.getElementById("bgVideo");
     const soundBtn = document.getElementById("soundToggle");
 
@@ -144,7 +186,6 @@
         soundBtn.textContent = video.muted ? "🔇" : "🔊";
     });
 </script>
-
 				<!-- Posts -->
 				<section class="posts">
 					<article>
