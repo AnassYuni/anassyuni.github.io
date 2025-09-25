@@ -14,83 +14,156 @@
       color: #333;
     }
     header {
-      background: #111;
+      background: linear-gradient(135deg, #ff9900, #ff6600);
       color: #fff;
+      padding: 60px 20px 40px;
       text-align: center;
-      padding: 1.5rem;
+      position: relative;
+    }
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: #fff;
+      color: #ff6600;
+      padding: 10px 18px;
+      border-radius: 25px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.3s;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+    }
+    .back-btn:hover {
+      background: #333;
+      color: #fff;
+    }
+    .lang-switch {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+    }
+    .lang-switch a img {
+      width: 30px;
+      height: 20px;
+      border-radius: 4px;
+      transition: 0.3s;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+    .lang-switch a img:hover {
+      transform: scale(1.1);
     }
     header h1 {
       margin: 0;
-      font-size: 2rem;
-      font-weight: 600;
+      font-size: 2.8em;
     }
-    header a {
-      display: inline-block;
+    header p {
       margin-top: 10px;
-      padding: 8px 16px;
-      font-size: 0.9rem;
-      text-decoration: none;
-      background: #ff6600;
-      color: #fff;
-      border-radius: 6px;
-      transition: background 0.3s ease;
+      font-size: 1.2em;
+      opacity: 0.9;
     }
-    header a:hover {
-      background: #e65c00;
-    }
-    section.clients {
-      padding: 2rem;
-      max-width: 1200px;
+    section {
+      padding: 50px 20px;
+      max-width: 900px;
       margin: auto;
-    }
-    section.clients h2 {
       text-align: center;
-      margin-bottom: 2rem;
-      font-size: 1.8rem;
-      font-weight: 600;
     }
-    section.clients h3 {
-      margin: 2rem 0 1rem;
-      font-size: 1.2rem;
-      color: #444;
+    section h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #222;
+    }
+    section p {
+      font-size: 1.1em;
+      margin-bottom: 20px;
+    }
+    .clients {
+      background: #fff;
+      border-radius: 12px;
+      padding: 50px 20px;
+      margin: 40px auto;
+      max-width: 1400px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .clients h2 {
+      margin-bottom: 30px;
+      color: #ff6600;
+    }
+    .clients h3 {
+      margin-top: 40px;
+      margin-bottom: 20px;
+      color: #333;
+      font-size: 1.4em;
     }
     .logo-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 1.5rem;
-      align-items: center;
-      justify-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
     }
     .logo-grid img {
-      max-width: 100px;
-      max-height: 60px;
+      width: 120px;
+      height: 70px;
       object-fit: contain;
-      filter: grayscale(100%);
-      transition: filter 0.3s ease, transform 0.3s ease;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
+    .logo-grid img:nth-child(3n) { transform: rotate(-3deg); }
+    .logo-grid img:nth-child(4n) { transform: rotate(2deg); }
+    .logo-grid img:nth-child(5n) { transform: rotate(-2deg); }
+    .logo-grid img:nth-child(7n) { transform: rotate(3deg); }
     .logo-grid img:hover {
-      filter: grayscale(0%);
-      transform: scale(1.05);
+      transform: scale(1.2) rotate(0deg);
+      box-shadow: 0 8px 14px rgba(0,0,0,0.25);
+      z-index: 10;
+      position: relative;
     }
     footer {
+      background: #222;
+      color: #fff;
       text-align: center;
-      padding: 1.5rem;
-      font-size: 0.9rem;
-      color: #666;
-      background: #f0f0f0;
-      margin-top: 3rem;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 0.9em;
     }
   </style>
 </head>
 <body>
 
   <header>
+    <a href="index-en.html" class="back-btn">← Home</a>
+
+    <!-- Language Switch -->
+    <div class="lang-switch">
+      <a href="elements-en.html"><img src="icons/en.png" alt="English">En</a>
+      <a href="elements-fr.html"><img src="icons/fr.png" alt="Français">Fr</a>
+    </div>
+
     <h1>Clients & Experience</h1>
-    <a href="index.html">← Back to Home</a>
+    <p>Years of warm and creative collaboration</p>
   </header>
 
+  <section>
+    <h2>A Journey with Wonderful Clients</h2>
+    <p>
+      Over the years, I have had the pleasure of working with incredible clients.  
+      Each project was more than just a job — it was a moment of trust,  
+      sharing ideas, and creating together.
+    </p>
+    <p>
+      What makes this journey unique are the relationships built along the way.  
+      My clients are not just partners; they become part of the story.  
+      Together we laugh, think, and celebrate every success, big or small.
+    </p>
+    <p>
+      I am deeply grateful for every smile, positive feedback,  
+      and handshake that turned into a lasting friendship.  
+      This fuels my passion and makes every new project even more exciting and full of hope.
+    </p>
+  </section>
+
   <section class="clients">
-    <h2>Trusted by Our Clients</h2>
+    <h2>They Trusted Me</h2>
 
     <!-- PART 1 -->
     <h3>Creative projects and unique collaborations made with passion</h3>
@@ -149,7 +222,7 @@
   </section>
 
   <footer>
-    <p>© 2025 Anass YUNI — All rights reserved.</p>
+    <p>&copy; 2025 My Portfolio | Grateful to all my clients</p>
   </footer>
 
 </body>
