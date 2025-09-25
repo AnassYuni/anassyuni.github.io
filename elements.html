@@ -14,177 +14,142 @@
       color: #333;
     }
     header {
-      background: linear-gradient(135deg, #ff9900, #ff6600);
+      background: #111;
       color: #fff;
-      padding: 60px 20px 40px;
       text-align: center;
-      position: relative;
-    }
-    .back-btn {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      background: #fff;
-      color: #ff6600;
-      padding: 10px 18px;
-      border-radius: 25px;
-      font-weight: bold;
-      text-decoration: none;
-      transition: 0.3s;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.15);
-    }
-    .back-btn:hover {
-      background: #333;
-      color: #fff;
-    }
-    .lang-switch {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      display: flex;
-      gap: 10px;
-    }
-    .lang-switch a img {
-      width: 30px;
-      height: 20px;
-      border-radius: 4px;
-      transition: 0.3s;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-    }
-    .lang-switch a img:hover {
-      transform: scale(1.1);
+      padding: 1.5rem;
     }
     header h1 {
       margin: 0;
-      font-size: 2.8em;
+      font-size: 2rem;
+      font-weight: 600;
     }
-    header p {
+    header a {
+      display: inline-block;
       margin-top: 10px;
-      font-size: 1.2em;
-      opacity: 0.9;
+      padding: 8px 16px;
+      font-size: 0.9rem;
+      text-decoration: none;
+      background: #ff6600;
+      color: #fff;
+      border-radius: 6px;
+      transition: background 0.3s ease;
     }
-    section {
-      padding: 50px 20px;
-      max-width: 900px;
-      margin: auto;
-      text-align: center;
+    header a:hover {
+      background: #e65c00;
     }
-    section h2 {
-      font-size: 2em;
-      margin-bottom: 20px;
-      color: #222;
-    }
-    section p {
-      font-size: 1.1em;
-      margin-bottom: 20px;
-    }
-    .clients {
-      background: #fff;
-      border-radius: 12px;
-      padding: 50px 20px;
-      margin: 40px auto;
+    section.clients {
+      padding: 2rem;
       max-width: 1200px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      margin: auto;
     }
-    .clients h2 {
-      margin-bottom: 30px;
-      color: #ff6600;
+    section.clients h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+    section.clients h3 {
+      margin: 2rem 0 1rem;
+      font-size: 1.2rem;
+      color: #444;
     }
     .logo-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 25px;
-      justify-items: center;
+      gap: 1.5rem;
       align-items: center;
+      justify-items: center;
     }
     .logo-grid img {
       max-width: 100px;
       max-height: 60px;
       object-fit: contain;
       filter: grayscale(100%);
-      transition: 0.3s;
+      transition: filter 0.3s ease, transform 0.3s ease;
     }
     .logo-grid img:hover {
       filter: grayscale(0%);
-      transform: scale(1.1);
+      transform: scale(1.05);
     }
     footer {
-      background: #222;
-      color: #fff;
       text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-      font-size: 0.9em;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+      color: #666;
+      background: #f0f0f0;
+      margin-top: 3rem;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <a href="index.html" class="back-btn">← Back to Home</a>
-
-    <!-- Language Switch -->
-    <div class="lang-switch">
-      <a href="elements.html"><img src="icons/en.png" alt="English">En</a>
-      <a href="elements-fr.html"><img src="icons/fr.png" alt="Français">Fr</a>
-    </div>
-
     <h1>Clients & Experience</h1>
-    <p>Celebrating years of creative collaboration</p>
+    <a href="index.html">← Back to Home</a>
   </header>
 
-  <section>
-    <h2>A Journey with Wonderful Clients</h2>
-    <p>
-      Over the years, I’ve had the joy of working with many amazing clients. 
-      Each project has been more than just work—it’s been about building trust, 
-      sharing ideas, and creating something meaningful together. 
-    </p>
-    <p>
-      What makes this journey special is the relationships we create along the way. 
-      My clients are not just partners; they become part of the story. 
-      Together, we laugh, brainstorm, and celebrate every success, big or small. 
-    </p>
-    <p>
-      I’m truly grateful for every smile, every feedback, and every handshake that 
-      turned into a long-lasting friendship. This is what keeps my passion alive 
-      and makes each new project exciting and full of hope.
-    </p>
-  </section>
-
   <section class="clients">
-    <h2>Trusted by Amazing Brands</h2>
+    <h2>Trusted by Our Clients</h2>
+
+    <!-- PART 1 -->
+    <h3>Creative projects and unique collaborations made with passion</h3>
     <div class="logo-grid">
-      <img src="logos/logo1.png" alt="Client 1">
-      <img src="logos/logo2.png" alt="Client 2">
-      <img src="logos/logo3.png" alt="Client 3">
-      <img src="logos/logo4.png" alt="Client 4">
-      <img src="logos/logo5.png" alt="Client 5">
-      <img src="logos/logo6.png" alt="Client 6">
-      <img src="logos/logo7.png" alt="Client 7">
-      <img src="logos/logo8.png" alt="Client 8">
-      <img src="logos/logo9.png" alt="Client 9">
-      <img src="logos/logo10.png" alt="Client 10">
-      <img src="logos/logo11.png" alt="Client 11">
-      <img src="logos/logo12.png" alt="Client 12">
-      <img src="logos/logo13.png" alt="Client 13">
-      <img src="logos/logo14.png" alt="Client 14">
-      <img src="logos/logo15.png" alt="Client 15">
-      <img src="logos/logo16.png" alt="Client 16">
-      <img src="logos/logo17.png" alt="Client 17">
-      <img src="logos/logo18.png" alt="Client 18">
-      <img src="logos/logo19.png" alt="Client 19">
-      <img src="logos/logo20.png" alt="Client 20">
-      <img src="logos/logo21.png" alt="Client 21">
-      <img src="logos/logo22.png" alt="Client 22">
-      <img src="logos/logo23.png" alt="Client 23">
-      <img src="logos/logo24.png" alt="Client 24">
-      <img src="logos/logo25.png" alt="Client 25">
+      <img src="logos/logo1.png" alt="Creative project 1">
+      <img src="logos/logo2.png" alt="Creative project 2">
+      <img src="logos/logo3.png" alt="Creative project 3">
+      <img src="logos/logo4.png" alt="Creative project 4">
+      <img src="logos/logo5.png" alt="Creative project 5">
+      <img src="logos/logo6.png" alt="Creative project 6">
+      <img src="logos/logo7.png" alt="Creative project 7">
+      <img src="logos/logo8.png" alt="Creative project 8">
+      <img src="logos/logo9.png" alt="Creative project 9">
+      <img src="logos/logo10.png" alt="Creative project 10">
+      <img src="logos/logo11.png" alt="Creative project 11">
+      <img src="logos/logo12.png" alt="Creative project 12">
+      <img src="logos/logo13.png" alt="Creative project 13">
+      <img src="logos/logo14.png" alt="Creative project 14">
+      <img src="logos/logo15.png" alt="Creative project 15">
+    </div>
+
+    <!-- PART 2 -->
+    <h3>Communication agencies, production companies and direct clients</h3>
+    <div class="logo-grid">
+      <img src="logos/logo16.png" alt="Agency or production 1">
+      <img src="logos/logo17.png" alt="Agency or production 2">
+      <img src="logos/logo18.png" alt="Agency or production 3">
+      <img src="logos/logo19.png" alt="Agency or production 4">
+      <img src="logos/logo20.png" alt="Agency or production 5">
+      <img src="logos/logo21.png" alt="Agency or production 6">
+      <img src="logos/logo22.png" alt="Agency or production 7">
+      <img src="logos/logo23.png" alt="Agency or production 8">
+      <img src="logos/logo24.png" alt="Agency or production 9">
+      <img src="logos/logo25.png" alt="Agency or production 10">
+      <img src="logos/logo26.png" alt="Agency or production 11">
+      <img src="logos/logo27.png" alt="Agency or production 12">
+      <img src="logos/logo28.png" alt="Agency or production 13">
+      <img src="logos/logo29.png" alt="Agency or production 14">
+      <img src="logos/logo30.png" alt="Agency or production 15">
+    </div>
+
+    <!-- PART 3 -->
+    <h3>Television channels and international streaming platforms</h3>
+    <div class="logo-grid">
+      <img src="logos/logo31.png" alt="Television channel 1">
+      <img src="logos/logo32.png" alt="Television channel 2">
+      <img src="logos/logo33.png" alt="Television channel 3">
+      <img src="logos/logo34.png" alt="Television channel 4">
+      <img src="logos/logo35.png" alt="Television channel 5">
+      <img src="logos/logo36.png" alt="Television channel 6">
+      <img src="logos/logo37.png" alt="Television channel 7">
+      <img src="logos/logo38.png" alt="Television channel 8">
+      <img src="logos/logo39.png" alt="Television channel 9">
+      <img src="logos/logo40.png" alt="Television channel 10">
     </div>
   </section>
 
   <footer>
-    <p>&copy; 2025 My Portfolio | With gratitude to all my clients</p>
+    <p>© 2025 Anass YUNI — All rights reserved.</p>
   </footer>
 
 </body>

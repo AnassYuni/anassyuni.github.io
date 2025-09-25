@@ -90,8 +90,12 @@
       margin-bottom: 30px;
       color: #ff6600;
     }
-
-    /* Creative Logo Mosaic */
+    .clients h3 {
+      margin-top: 40px;
+      margin-bottom: 20px;
+      color: #333;
+      font-size: 1.4em;
+    }
     .logo-grid {
       display: flex;
       flex-wrap: wrap;
@@ -104,20 +108,16 @@
       object-fit: contain;
       transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
-
-    /* Random rotations for collage effect */
     .logo-grid img:nth-child(3n) { transform: rotate(-3deg); }
     .logo-grid img:nth-child(4n) { transform: rotate(2deg); }
     .logo-grid img:nth-child(5n) { transform: rotate(-2deg); }
     .logo-grid img:nth-child(7n) { transform: rotate(3deg); }
-
     .logo-grid img:hover {
       transform: scale(1.2) rotate(0deg);
       box-shadow: 0 8px 14px rgba(0,0,0,0.25);
       z-index: 10;
       position: relative;
     }
-
     footer {
       background: #222;
       color: #fff;
@@ -164,48 +164,60 @@
 
   <section class="clients">
     <h2>Ils m’ont fait confiance</h2>
+
+    <!-- PART 1 -->
+    <h3>Projets créatifs et collaborations uniques réalisés avec passion</h3>
     <div class="logo-grid">
-      <!-- Add up to 40 logos -->
-      <img src="logos/SNRT-vector.ma.svg-vector.ma.png" alt="Client 1">
-      <img src="logos/2M Logo-vector.ma.svg-vector.ma.png" alt="Client 2">
-      <img src="logos/Medi 1 TV-vector.ma.svg-vector.ma.png" alt="Client 3">
-      <img src="logos/mbc 5 __ __ __-vector.ma.svg-vector.ma.png" alt="Client 4">
-      <img src="logos/MBC Shahid.png" alt="Client 5">
-      <img src="logos/_Morocco VisitMorocco-vector.ma.svg-vector.ma.png" alt="Client 6">
-      <img src="logos/Artisanat du maroc-vector.ma.svg-vector.ma.png" alt="Client 7">
-      <img src="logos/ASSOCIATION MAROC CULTURE-vector.ma.png" alt="Client 8">
-      <img src="logos/Inwi-vector.ma.svg-vector.ma.png" alt="Client 9">
-      <img src="logos/_Morocco VisitMorocco-vector.ma.svg-vector.ma.png" alt="Client 10">
-      <img src="logos/mdjs.png" alt="Client 11">
-      <img src="logos/ONCF-vector.ma.svg-vector.ma.png" alt="Client 12">
-      <img src="logos/ONE-vector.ma.svg-vector.ma.png" alt="Client 13">
-      <img src="logos/Poste Maroc _______ _____-vector.ma.png" alt="Client 14">
-      <img src="logos/Sidi ali ____ ___-vector.ma.svg-vector.ma.png" alt="Client 15">
-      <img src="logos/STAR -vector.ma.svg-vector.ma.png" alt="Client 16">
-      <img src="logos/Lesieur Oeil Maroc - ___ -vector.ma.png" alt="Client 17">
-      <img src="logos/ambc shahid.png" alt="Client 18">
-      <img src="logos/logo19.png" alt="Client 19">
-      <img src="logos/logo20.png" alt="Client 20">
-      <img src="logos/logo21.png" alt="Client 21">
-      <img src="logos/logo22.png" alt="Client 22">
-      <img src="logos/logo23.png" alt="Client 23">
-      <img src="logos/logo24.png" alt="Client 24">
-      <img src="logos/logo25.png" alt="Client 25">
-      <img src="logos/logo26.png" alt="Client 26">
-      <img src="logos/logo27.png" alt="Client 27">
-      <img src="logos/logo28.png" alt="Client 28">
-      <img src="logos/logo29.png" alt="Client 29">
-      <img src="logos/logo30.png" alt="Client 30">
-      <img src="logos/logo31.png" alt="Client 31">
-      <img src="logos/logo32.png" alt="Client 32">
-      <img src="logos/logo33.png" alt="Client 33">
-      <img src="logos/logo34.png" alt="Client 34">
-      <img src="logos/logo35.png" alt="Client 35">
-      <img src="logos/logo36.png" alt="Client 36">
-      <img src="logos/logo37.png" alt="Client 37">
-      <img src="logos/logo38.png" alt="Client 38">
-      <img src="logos/logo39.png" alt="Client 39">
-      <img src="logos/logo40.png" alt="Client 40">
+      <img src="logos/logo1.png" alt="Projet créatif 1">
+      <img src="logos/logo2.png" alt="Projet créatif 2">
+      <img src="logos/logo3.png" alt="Projet créatif 3">
+      <img src="logos/logo4.png" alt="Projet créatif 4">
+      <img src="logos/logo5.png" alt="Projet créatif 5">
+      <img src="logos/logo6.png" alt="Projet créatif 6">
+      <img src="logos/logo7.png" alt="Projet créatif 7">
+      <img src="logos/logo8.png" alt="Projet créatif 8">
+      <img src="logos/logo9.png" alt="Projet créatif 9">
+      <img src="logos/logo10.png" alt="Projet créatif 10">
+      <img src="logos/logo11.png" alt="Projet créatif 11">
+      <img src="logos/logo12.png" alt="Projet créatif 12">
+      <img src="logos/logo13.png" alt="Projet créatif 13">
+      <img src="logos/logo14.png" alt="Projet créatif 14">
+      <img src="logos/logo15.png" alt="Projet créatif 15">
+    </div>
+
+    <!-- PART 2 -->
+    <h3>Agences de communication, sociétés de production et clients directs</h3>
+    <div class="logo-grid">
+      <img src="logos/logo16.png" alt="Agence ou production 1">
+      <img src="logos/logo17.png" alt="Agence ou production 2">
+      <img src="logos/logo18.png" alt="Agence ou production 3">
+      <img src="logos/logo19.png" alt="Agence ou production 4">
+      <img src="logos/logo20.png" alt="Agence ou production 5">
+      <img src="logos/logo21.png" alt="Agence ou production 6">
+      <img src="logos/logo22.png" alt="Agence ou production 7">
+      <img src="logos/logo23.png" alt="Agence ou production 8">
+      <img src="logos/logo24.png" alt="Agence ou production 9">
+      <img src="logos/logo25.png" alt="Agence ou production 10">
+      <img src="logos/logo26.png" alt="Agence ou production 11">
+      <img src="logos/logo27.png" alt="Agence ou production 12">
+      <img src="logos/logo28.png" alt="Agence ou production 13">
+      <img src="logos/logo29.png" alt="Agence ou production 14">
+      <img src="logos/logo30.png" alt="Agence ou production 15">
+    </div>
+
+    <!-- PART 3 -->
+    <h3>Chaînes de télévision et plateformes de diffusion internationales</h3>
+    <div class="logo-grid">
+      <img src="logos/logo31.png" alt="Chaîne de télévision 1">
+      <img src="logos/logo32.png" alt="Chaîne de télévision 2">
+      <img src="logos/logo33.png" alt="Chaîne de télévision 3">
+      <img src="logos/logo34.png" alt="Chaîne de télévision 4">
+      <img src="logos/logo35.png" alt="Chaîne de télévision 5">
+      <img src="logos/logo36.png" alt="Chaîne de télévision 6">
+      <img src="logos/logo37.png" alt="Chaîne de télévision 7">
+      <img src="logos/logo38.png" alt="Chaîne de télévision 8">
+      <img src="logos/logo39.png" alt="Chaîne de télévision 9">
+      <img src="logos/logo40.png" alt="Chaîne de télévision 10">
     </div>
   </section>
 
