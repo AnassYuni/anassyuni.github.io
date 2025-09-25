@@ -90,10 +90,8 @@
 					la Narration Visuelle</a></h2>
 					<p>En tant que producteur vidéo dédié, je me spécialise dans la mise en valeur des histoires. Qu'il s'agisse de publicités, de vidéos d'entreprise ou de projets artistiques, je m'engage à livrer un travail visuellement captivant et de haute qualité qui résonne avec le public.</p>
 				</header>
-				<!-- Video Section -->
 				<a href="#" class="image main" style="position: relative; display: block;">
 					<video 
-						muted
 						playsinline
 						loop
 						preload="metadata"
@@ -241,9 +239,10 @@
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
 
-	<!-- Video behavior script -->
+	<!-- Video behavior with sound -->
 	<script>
 	const videos = document.querySelectorAll("video");
+	let userInteracted = false;
 
 	function pauseAllExcept(current) {
 		videos.forEach(v => {
@@ -265,6 +264,7 @@
 					vid.src = src;
 					vid.load();
 				}
+				if(userInteracted) vid.muted = false;
 				vid.play().catch(()=>{});
 			} else {
 				vid.pause();
@@ -274,16 +274,24 @@
 		});
 	}, { threshold: 0.5 });
 
+	function enableSound() {
+		userInteracted = true;
+		videos.forEach(v => v.muted = false);
+		window.removeEventListener('click', enableSound);
+		window.removeEventListener('scroll', enableSound);
+	}
+
+	window.addEventListener('click', enableSound);
+	window.addEventListener('scroll', enableSound);
+
 	videos.forEach(video => {
 		video.controls = false;
 		video.preload = "metadata";
-
+		video.muted = true; // start muted for autoplay
 		const src = video.querySelector("source").src;
 		video.dataset.src = src;
-
 		video.style.background = `url(${src}) center center / cover no-repeat`;
 		video.style.cursor = "pointer";
-
 		observer.observe(video);
 
 		video.addEventListener("click", () => {
@@ -293,6 +301,7 @@
 					video.src = video.dataset.src;
 					video.load();
 				}
+				if(userInteracted) video.muted = false;
 				video.play();
 			} else {
 				video.pause();

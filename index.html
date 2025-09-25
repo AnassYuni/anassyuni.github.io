@@ -90,10 +90,8 @@
 					Visual Storytelling</a></h2>
 					<p>As a dedicated video producer, I specialize in bringing stories to life. Whether it's through commercials, corporate videos, or artistic projects, I am committed to delivering high-quality, visually compelling work that resonates with audiences.</p>
 				</header>
-				<!-- Video Section -->
 				<a href="#" class="image main" style="position: relative; display: block;">
 					<video 
-						muted
 						playsinline
 						loop
 						preload="metadata"
@@ -110,7 +108,7 @@
 				<article>
 					<header>
 						<span class="date">2025</span>
-						<h2><a href="#">versace<br />Red jeans Perfume</a></h2>
+						<h2><a href="#">Versace<br />Red Jeans Perfume</a></h2>
 					</header>
 					<video class="image fit" preload="metadata">
 						<source src="videos/VERSACE COMMERCIAL v3.mp4" type="video/mp4">
@@ -134,7 +132,7 @@
 				<article>
 					<header>
 						<span class="date">2025</span>
-						<h2><a href="#">yamna desgin<br />creatable</a></h2>
+						<h2><a href="#">Yamna Design<br />Creatable</a></h2>
 					</header>
 					<video class="image fit" preload="metadata">
 						<source src="videos/YAMNA_FILM 02_4K_1.mp4" type="video/mp4">
@@ -146,7 +144,7 @@
 				<article>
 					<header>
 						<span class="date">2025</span>
-						<h2><a href="#">yamna desgin<br />MAgistral bowl</a></h2>
+						<h2><a href="#">Yamna Design<br />Magistral Bowl</a></h2>
 					</header>
 					<video class="image fit" preload="metadata">
 						<source src="videos/YAMNA_FILM 01_4K_1.mp4" type="video/mp4">
@@ -158,7 +156,7 @@
 				<article>
 					<header>
 						<span class="date">2025</span>
-						<h2><a href="#">Viktor&Rolf<br />spicebomb</a></h2>
+						<h2><a href="#">Viktor&Rolf<br />Spicebomb</a></h2>
 					</header>
 					<video class="image fit" preload="metadata">
 						<source src="videos/SPICEBOMB COMMERCIAL V01.mp4" type="video/mp4">
@@ -241,15 +239,15 @@
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
 
-	<!-- Video behavior script -->
+	<!-- Video behavior with sound -->
 	<script>
 	const videos = document.querySelectorAll("video");
+	let userInteracted = false;
 
 	function pauseAllExcept(current) {
 		videos.forEach(v => {
 			if(v !== current) {
 				v.pause();
-				// Stop buffering
 				v.removeAttribute("src");
 				v.load();
 			}
@@ -261,32 +259,39 @@
 			const vid = entry.target;
 			if(entry.isIntersecting) {
 				pauseAllExcept(vid);
-				// Restore source if removed
 				if(!vid.querySelector("source").src) {
 					const src = vid.dataset.src;
 					vid.src = src;
 					vid.load();
 				}
+				if(userInteracted) vid.muted = false;
 				vid.play().catch(()=>{});
 			} else {
 				vid.pause();
-				v.removeAttribute("src");
-				v.load();
+				vid.removeAttribute("src");
+				vid.load();
 			}
 		});
 	}, { threshold: 0.5 });
 
+	function enableSound() {
+		userInteracted = true;
+		videos.forEach(v => v.muted = false);
+		window.removeEventListener('click', enableSound);
+		window.removeEventListener('scroll', enableSound);
+	}
+
+	window.addEventListener('click', enableSound);
+	window.addEventListener('scroll', enableSound);
+
 	videos.forEach(video => {
 		video.controls = false;
 		video.preload = "metadata";
-
+		video.muted = true;
 		const src = video.querySelector("source").src;
 		video.dataset.src = src;
-
-		// Thumbnail when not playing
 		video.style.background = `url(${src}) center center / cover no-repeat`;
 		video.style.cursor = "pointer";
-
 		observer.observe(video);
 
 		video.addEventListener("click", () => {
@@ -296,6 +301,7 @@
 					video.src = video.dataset.src;
 					video.load();
 				}
+				if(userInteracted) video.muted = false;
 				video.play();
 			} else {
 				video.pause();
